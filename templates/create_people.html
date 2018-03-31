@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+
+
+<!-- Mirrored from www.zi-han.net/theme/hplus/form_basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:19:15 GMT -->
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>创建人群模块</title>
+    <meta name="keywords" content="Auraro用户画像系统">
+    <meta name="description" content="Auraro用户画像系统">
+
+    <link rel="shortcut icon" href="favicon.ico"> <link href="/static/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="/static/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link href="/static/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="/static/css/animate.min.css" rel="stylesheet">
+    <link href="/static/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+    <link href="/static/css/animate.min.css" rel="stylesheet">
+    <link href="/static/css/plugins/dropzone/basic.css" rel="stylesheet">
+    <link href="/static/css/plugins/dropzone/dropzone.css" rel="stylesheet">
+    <link href="/static/css/plugins/chosen/chosen.css" rel="stylesheet">
+    <link href="/static/css/plugins/cropper/cropper.min.css" rel="stylesheet">
+    <link href="/static/css/plugins/switchery/switchery.css" rel="stylesheet">
+    <link href="/static/css/plugins/jasny/jasny-bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/plugins/nouslider/jquery.nouislider.css" rel="stylesheet">
+    <link href="/static/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+    <link href="/static/css/plugins/ionRangeSlider/ion.rangeSlider.css" rel="stylesheet">
+    <link href="/static/css/plugins/ionRangeSlider/ion.rangeSlider.skinFlat.css" rel="stylesheet">
+    <link href="/static/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+    <link href="/static/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <div class="alert alert-danger" role="alert">
+                            <span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>
+                            <span class="sr-only">Error:</span>
+                            实时标签更新时间： 2018-3-28 11:10:42, 如需要更多标签请在服务反馈中联系管理员
+                        </div>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="form_basic.html#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="form_basic.html#">选项1</a>
+                                </li>
+                                <li><a href="form_basic.html#">选项2</a>
+                                </li>
+                            </ul>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <form method="get" class="form-horizontal"> <!--看好了form标签-->
+                            <div class="form-group  has-warning">
+                                <label class="col-sm-2 control-label">人群名称</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" placeholder="北京VIP2以上近一个月活跃(推送邮件)">
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                           <div class="form-group  has-success">
+                                <label class="col-sm-2 control-label">人群详细描述</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" style="height:150px"> <span class="help-block m-b-none">例如：北京VIP2且近一个月冒泡下单次数高用户群体</span>
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                          <div class="row">
+                                <label class="col-sm-2 control-label"  style="display:inline">选择标签用途</label>
+
+                                <div class="col-sm-4"  >
+                                    <select class="form-control m-b" name="account" >
+                                        <option>运营推送</option>
+                                        <option>A/B测试</option>
+                                        <option>人群分析</option>
+                                    </select>
+                                </div>
+
+                                <label class="col-sm-2 control-label">所属业务部门</label>
+
+                                <div class="col-sm-4">
+                                    <select class="form-control m-b" name="account">
+                                        <option>大数据部</option>
+                                        <option>策略模型部</option>
+                                        <option>运营部门</option>
+                                        <option>BI智能分析部</option>
+                                         <option>反作弊部</option>
+                                         <option>其他</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group has-error">
+                                <label class="col-sm-2  control-label">选择标签组1</label>
+                                <div class="col-sm-10">
+                                    <select data-placeholder="选择标签" class="chosen-select" multiple style="width:350px;"
+                                            tabindex="4">
+                                        <option value="">请选择标签</option>
+                                        <option value="110000" hassubinfo="true">北京</option>
+                                        <option value="120000" hassubinfo="true">浙江省</option>
+                                        <option value="130000" hassubinfo="true">山东省</option>
+                                        <option value="140000" hassubinfo="true">活跃用户</option>
+                                        <option value="150000" hassubinfo="true">衰退用户</option>
+                                        <option value="210000" hassubinfo="true">流失用户</option>
+                                        <option value="220000" hassubinfo="true">新用户</option>
+                                        <option value="230000" hassubinfo="true">学生</option>
+                                        <option value="310000" hassubinfo="true">白领</option>
+                                        <option value="320000" hassubinfo="true">母婴人群</option>
+                                        <option value="330000" hassubinfo="true">运动爱好</option>
+                                        <option value="340000" hassubinfo="true">美妆人群</option>
+                                        <option value="350000" hassubinfo="true">吃货一族</option>
+                                        <option value="360000" hassubinfo="true">近7日冒泡</option>
+                                        <option value="370000" hassubinfo="true">近30日冒泡</option>
+                                        <option value="410000" hassubinfo="true">近3个月冒泡</option>
+                                        <option value="420000" hassubinfo="true">近7日订单</option>
+                                        <option value="430000" hassubinfo="true">近30日订单</option>
+                                        <option value="440000" hassubinfo="true">近3个月订单</option>
+                                        <option value="450000" hassubinfo="true">广西壮族自治区</option>
+                                        <option value="460000" hassubinfo="true">VIP1级</option>
+                                        <option value="500000" hassubinfo="true">VIP2-4级</option>
+                                        <option value="510000" hassubinfo="true">VIP5-6级</option>
+                                        <option value="520000" hassubinfo="true">欺诈风险低级用户</option>
+                                        <option value="530000" hassubinfo="true">欺诈风险高级用户</option>
+                                        <option value="540000" hassubinfo="true">信用风险低级用户</option>
+                                        <option value="610000" hassubinfo="true">欺诈风险高级用户</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group has-error">
+                                 <label class="col-sm-2  control-label">人群交集或并集</label>
+                                <div class="col-sm-3">
+                                    <select class="form-control m-b" name="account">
+                                        <option>且</option>
+                                        <option>或</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group has-error">
+                                <label class="col-sm-2  control-label">选择标签组2</label>
+                                <div class="col-sm-10">
+                                    <select data-placeholder="选择标签" class="chosen-select" multiple style="width:350px;"
+                                            tabindex="4">
+                                        <option value="">请选择标签</option>
+                                        <option value="110000" hassubinfo="true">北京</option>
+                                        <option value="120000" hassubinfo="true">浙江省</option>
+                                        <option value="130000" hassubinfo="true">山东省</option>
+                                        <option value="140000" hassubinfo="true">活跃用户</option>
+                                        <option value="150000" hassubinfo="true">衰退用户</option>
+                                        <option value="210000" hassubinfo="true">流失用户</option>
+                                        <option value="220000" hassubinfo="true">新用户</option>
+                                        <option value="230000" hassubinfo="true">学生</option>
+                                        <option value="310000" hassubinfo="true">白领</option>
+                                        <option value="320000" hassubinfo="true">母婴人群</option>
+                                        <option value="330000" hassubinfo="true">运动爱好</option>
+                                        <option value="340000" hassubinfo="true">美妆人群</option>
+                                        <option value="350000" hassubinfo="true">吃货一族</option>
+                                        <option value="360000" hassubinfo="true">近7日冒泡</option>
+                                        <option value="370000" hassubinfo="true">近30日冒泡</option>
+                                        <option value="410000" hassubinfo="true">近3个月冒泡</option>
+                                        <option value="420000" hassubinfo="true">近7日订单</option>
+                                        <option value="430000" hassubinfo="true">近30日订单</option>
+                                        <option value="440000" hassubinfo="true">近3个月订单</option>
+                                        <option value="450000" hassubinfo="true">广西壮族自治区</option>
+                                        <option value="460000" hassubinfo="true">VIP1级</option>
+                                        <option value="500000" hassubinfo="true">VIP2-4级</option>
+                                        <option value="510000" hassubinfo="true">VIP5-6级</option>
+                                        <option value="520000" hassubinfo="true">欺诈风险低级用户</option>
+                                        <option value="530000" hassubinfo="true">欺诈风险高级用户</option>
+                                        <option value="540000" hassubinfo="true">信用风险低级用户</option>
+                                        <option value="610000" hassubinfo="true">欺诈风险高级用户</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <button class="btn btn-primary" type="submit">创建人群</button>
+                                    <button class="btn btn-white" type="submit">取消</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-form" class="modal fade" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-6 b-r">
+                            <h3 class="m-t-none m-b">登录</h3>
+
+                            <p>欢迎登录本站(⊙o⊙)</p>
+
+                            <form role="form">
+                                <div class="form-group">
+                                    <label>用户名：</label>
+                                    <input type="email" placeholder="请输入用户名" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>密码：</label>
+                                    <input type="password" placeholder="请输入密码" class="form-control">
+                                </div>
+                                <div>
+                                    <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>登录</strong>
+                                    </button>
+                                    <label>
+                                        <input type="checkbox" class="i-checks">自动登录</label>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-sm-6">
+                            <h4>还不是会员？</h4>
+                            <p>您可以注册一个账户</p>
+                            <p class="text-center">
+                                <a href="form_basic.html"><i class="fa fa-sign-in big-icon"></i></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/js/jquery.min.js?v=2.1.4"></script>
+    <script src="/static/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="/static/js/content.min.js?v=1.0.0"></script>
+    <script src="/static/js/plugins/iCheck/icheck.min.js"></script>
+    <script src="/static/js/plugins/chosen/chosen.jquery.js"></script>
+    <script src="/static/js/plugins/suggest/bootstrap-suggest.min.js"></script>
+    <script src="/static/js/plugins/jsKnob/jquery.knob.js"></script>
+    <script src="/static/js/plugins/jasny/jasny-bootstrap.min.js"></script>
+    <script src="/static/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+    <script src="/static/js/plugins/prettyfile/bootstrap-prettyfile.js"></script>
+    <script src="/static/js/plugins/nouslider/jquery.nouislider.min.js"></script>
+    <script src="/static/js/plugins/switchery/switchery.js"></script>
+    <script src="/static/js/plugins/ionRangeSlider/ion.rangeSlider.min.js"></script>
+    <script src="/static/js/plugins/iCheck/icheck.min.js"></script>
+    <script src="/static/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="/static/js/plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
+    <script src="/static/js/plugins/clockpicker/clockpicker.js"></script>
+    <script src="/static/js/plugins/cropper/cropper.min.js"></script>
+    <script src="/static/js/demo/form-advanced-demo.min.js"></script>
+    <script type="text/javascript">
+        var testBsSuggest=$("#test").bsSuggest({url:"/static/js/plugins/suggest/data.json",idField:"userId",keyField:"userName"}).on("onDataRequestSuccess",function(e,result){console.log("onDataRequestSuccess: ",result)}).on("onSetSelectValue",function(e,keyword){console.log("onSetSelectValue: ",keyword)}).on("onUnsetSelectValue",function(e){console.log("onUnsetSelectValue")});var testBsSuggest=$("#testNoBtn").bsSuggest({url:"js/plugins/suggest/data.json",showBtn:false,idField:"userId",keyField:"userName"}).on("onDataRequestSuccess",function(e,result){console.log("onDataRequestSuccess: ",result)}).on("onSetSelectValue",function(e,keyword){console.log("onSetSelectValue: ",keyword)}).on("onUnsetSelectValue",function(e){console.log("onUnsetSelectValue")});var testdataBsSuggest=$("#test_data").bsSuggest({indexId:2,indexKey:1,data:{"value":[{"id":"0","word":"lzw","description":"http://lzw.me"},{"id":"1","word":"lzwme","description":"http://w.lzw.me"},{"id":"2","word":"meizu","description":"http://www.meizu.com"},{"id":"3","word":"flyme","description":"http://flyme.meizu.com"}],"defaults":"http://lzw.me"}});var baiduBsSuggest=$("#baidu").bsSuggest({allowNoKeyword:false,multiWord:true,separator:",",getDataMethod:"url",url:"http://unionsug.baidu.com/su?p=3&t="+(new Date()).getTime()+"&wd=",jsonp:"cb",processData:function(json){var i,len,data={value:[]};if(!json||!json.s||json.s.length===0){return false}console.log(json);len=json.s.length;jsonStr="{'value':[";for(i=0;i<len;i++){data.value.push({word:json.s[i]})}data.defaults="baidu";return data}});var taobaoBsSuggest=$("#taobao").bsSuggest({indexId:2,indexKey:1,allowNoKeyword:false,multiWord:true,separator:",",getDataMethod:"url",effectiveFieldsAlias:{Id:"序号",Keyword:"关键字",Count:"数量"},showHeader:true,url:"http://suggest.taobao.com/sug?code=utf-8&extras=1&q=",jsonp:"callback",processData:function(json){var i,len,data={value:[]};if(!json||!json.result||json.result.length==0){return false}console.log(json);len=json.result.length;for(i=0;i<len;i++){data.value.push({"Id":(i+1),"Keyword":json.result[i][0],"Count":json.result[i][1]})}console.log(data);return data}});$("form").submit(function(e){return false});
+    </script>
+    <script type="text/javascript">
+        var testdataBsSuggest = $("#test_data").bsSuggest({
+            indexId: 2,
+            indexKey: 1,
+            data: {
+                "value": [{"id": "0", "word": "lzw", "description": "http://lzw.me"}, {
+                    "id": "1",
+                    "word": "lzwme",
+                    "description": "http://w.lzw.me"
+                }, {"id": "2", "word": "meizu", "description": "http://www.meizu.com"}, {
+                    "id": "3",
+                    "word": "flyme",
+                    "description": "http://flyme.meizu.com"
+                }], "defaults": "http://lzw.me"
+            }
+        });
+        $("form").submit(function (e) {
+            return false
+        });
+    </script>
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+</body>
+
+
+<!-- Mirrored from www.zi-han.net/theme/hplus/form_basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:19:15 GMT -->
+</html>

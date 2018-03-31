@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+
+
+<!-- Mirrored from www.zi-han.net/theme/hplus/project_detail.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:19:44 GMT -->
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>ABtest模块</title>
+    <meta name="keywords" content="Auraro用户画像">
+    <meta name="description" content=”Auraro用户画像">
+
+    <link rel="shortcut icon" href="favicon.ico"> <link href="/static/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="/static/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link href="/static/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="/static/css/animate.min.css" rel="stylesheet">
+    <link href="/static/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+    <link href="/static/css/animate.min.css" rel="stylesheet">
+    <link href="/static/css/plugins/dropzone/basic.css" rel="stylesheet">
+    <link href="/static/css/plugins/dropzone/dropzone.css" rel="stylesheet">
+    <link href="/static/css/plugins/chosen/chosen.css" rel="stylesheet">
+    <link href="/static/css/plugins/cropper/cropper.min.css" rel="stylesheet">
+    <link href="/static/css/plugins/switchery/switchery.css" rel="stylesheet">
+    <link href="/static/css/plugins/jasny/jasny-bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/plugins/nouslider/jquery.nouislider.css" rel="stylesheet">
+    <link href="/static/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+    <link href="/static/css/plugins/ionRangeSlider/ion.rangeSlider.css" rel="stylesheet">
+    <link href="/static/css/plugins/ionRangeSlider/ion.rangeSlider.skinFlat.css" rel="stylesheet">
+    <link href="/static/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+    <link href="/static/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+</head>
+
+<body class="gray-bg">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="wrapper wrapper-content animated fadeInUp">
+                <div class="ibox">
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="panel blank-panel">
+                                    <div class="panel-heading">
+                                        <div class="panel-options">
+                                            <ul class="nav nav-tabs">
+                                                <li><a href="project_detail.html#tab-1" data-toggle="tab">ABtest实验配置</a>
+                                                </li>
+                                                <li class=""><a href="project_detail.html#tab-2" data-toggle="tab">实验效果</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="panel-body">
+{#                                        tab1#}
+                                        <div class="tab-content">
+                                            <div class="tab-pane active" id="tab-1">
+                                                <div class="ibox-content">
+                                                    <form method="get" class="form-horizontal"> <!--看好了form标签-->
+                                                        <div class="form-group  ">
+                                                            <label class="col-sm-2 control-label">实验名称</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control"
+                                                                       placeholder="深圳分AB组测验新运营策略效果">
+                                                            </div>
+                                                        </div>
+                                                        <div class="hr-line-dashed"></div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-2 control-label">实验详细描述</label>
+                                                            <div class="col-sm-10">
+                                                                <input type="text" class="form-control"
+                                                                       style="height:150px"> <span
+                                                                    class="help-block m-b-none">深圳分AB组测验新运营策略效果</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="hr-line-dashed"></div>
+
+                                                        <div class="form-group has-success">
+                                                            <label class="col-sm-2  control-label">A组测验人群</label>
+                                                            <div class="col-sm-10">
+                                                                <select data-placeholder="选择测验人群" class="chosen-select"
+                                                                        multiple style="width:350px;"
+                                                                        tabindex="4">
+                                                                    <option value="">请选择A组测验人群</option>
+                                                                    <option value="110000" hassubinfo="true">北京</option>
+                                                                    <option value="120000" hassubinfo="true">浙江省
+                                                                    </option>
+                                                                    <option value="130000" hassubinfo="true">山东省
+                                                                    </option>
+                                                                    <option value="140000" hassubinfo="true">活跃用户
+                                                                    </option>
+                                                                    <option value="150000" hassubinfo="true">衰退用户
+                                                                    </option>
+                                                                    <option value="210000" hassubinfo="true">流失用户
+                                                                    </option>
+                                                                    <option value="220000" hassubinfo="true">新用户
+                                                                    </option>
+                                                                    <option value="230000" hassubinfo="true">学生</option>
+                                                                    <option value="310000" hassubinfo="true">白领</option>
+                                                                    <option value="320000" hassubinfo="true">母婴人群
+                                                                    </option>
+                                                                    <option value="330000" hassubinfo="true">运动爱好
+                                                                    </option>
+                                                                    <option value="340000" hassubinfo="true">美妆人群
+                                                                    </option>
+                                                                    <option value="350000" hassubinfo="true">吃货一族
+                                                                    </option>
+                                                                    <option value="360000" hassubinfo="true">近7日冒泡
+                                                                    </option>
+                                                                    <option value="370000" hassubinfo="true">近30日冒泡
+                                                                    </option>
+                                                                    <option value="410000" hassubinfo="true">近3个月冒泡
+                                                                    </option>
+                                                                    <option value="420000" hassubinfo="true">近7日订单
+                                                                    </option>
+                                                                    <option value="430000" hassubinfo="true">近30日订单
+                                                                    </option>
+                                                                    <option value="440000" hassubinfo="true">近3个月订单
+                                                                    </option>
+                                                                    <option value="450000" hassubinfo="true">广西壮族自治区
+                                                                    </option>
+                                                                    <option value="460000" hassubinfo="true">VIP1级
+                                                                    </option>
+                                                                    <option value="500000" hassubinfo="true">VIP2-4级
+                                                                    </option>
+                                                                    <option value="510000" hassubinfo="true">VIP5-6级
+                                                                    </option>
+                                                                    <option value="520000" hassubinfo="true">欺诈风险低级用户
+                                                                    </option>
+                                                                    <option value="530000" hassubinfo="true">欺诈风险高级用户
+                                                                    </option>
+                                                                    <option value="540000" hassubinfo="true">信用风险低级用户
+                                                                    </option>
+                                                                    <option value="610000" hassubinfo="true">欺诈风险高级用户
+                                                                    </option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group has-waring">
+                                                            <label class="col-sm-2  control-label">对照</label>
+                                                        </div>
+                                                        <div class="form-group has-error">
+                                                            <label class="col-sm-2  control-label">B组测验人群</label>
+                                                            <div class="col-sm-10">
+                                                                <select data-placeholder="选择测验人群" class="chosen-select"
+                                                                        multiple style="width:350px;"
+                                                                        tabindex="4">
+                                                                    <option value="">请选择B组测验人群</option>
+                                                                    <option value="110000" hassubinfo="true">北京</option>
+                                                                    <option value="120000" hassubinfo="true">浙江省
+                                                                    </option>
+                                                                    <option value="130000" hassubinfo="true">山东省
+                                                                    </option>
+                                                                    <option value="140000" hassubinfo="true">活跃用户
+                                                                    </option>
+                                                                    <option value="150000" hassubinfo="true">衰退用户
+                                                                    </option>
+                                                                    <option value="210000" hassubinfo="true">流失用户
+                                                                    </option>
+                                                                    <option value="220000" hassubinfo="true">新用户
+                                                                    </option>
+                                                                    <option value="230000" hassubinfo="true">学生</option>
+                                                                    <option value="310000" hassubinfo="true">白领</option>
+                                                                    <option value="320000" hassubinfo="true">母婴人群
+                                                                    </option>
+                                                                    <option value="330000" hassubinfo="true">运动爱好
+                                                                    </option>
+                                                                    <option value="340000" hassubinfo="true">美妆人群
+                                                                    </option>
+                                                                    <option value="350000" hassubinfo="true">吃货一族
+                                                                    </option>
+                                                                    <option value="360000" hassubinfo="true">近7日冒泡
+                                                                    </option>
+                                                                    <option value="370000" hassubinfo="true">近30日冒泡
+                                                                    </option>
+                                                                    <option value="410000" hassubinfo="true">近3个月冒泡
+                                                                    </option>
+                                                                    <option value="420000" hassubinfo="true">近7日订单
+                                                                    </option>
+                                                                    <option value="430000" hassubinfo="true">近30日订单
+                                                                    </option>
+                                                                    <option value="440000" hassubinfo="true">近3个月订单
+                                                                    </option>
+                                                                    <option value="450000" hassubinfo="true">广西壮族自治区
+                                                                    </option>
+                                                                    <option value="460000" hassubinfo="true">VIP1级
+                                                                    </option>
+                                                                    <option value="500000" hassubinfo="true">VIP2-4级
+                                                                    </option>
+                                                                    <option value="510000" hassubinfo="true">VIP5-6级
+                                                                    </option>
+                                                                    <option value="520000" hassubinfo="true">欺诈风险低级用户
+                                                                    </option>
+                                                                    <option value="530000" hassubinfo="true">欺诈风险高级用户
+                                                                    </option>
+                                                                    <option value="540000" hassubinfo="true">信用风险低级用户
+                                                                    </option>
+                                                                    <option value="610000" hassubinfo="true">欺诈风险高级用户
+                                                                    </option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                                <div class="hr-line-dashed"></div>
+                                                         <div class="form-group">
+
+                                                        <div class="m-b-sm">
+                                                            <small><strong>示例：</strong>
+                                                                设置流量区间，值为0%-1000%，
+                                                            </small>
+                                                        </div>
+                                                        <div id="ionrange_1"></div>
+                                                         </div>
+                                                        <div class="hr-line-dashed"></div>
+                                                        <div class="form-group">
+                                                            <div class="col-sm-4 col-sm-offset-2">
+                                                                <button class="btn btn-primary" type="submit">创建实验
+                                                                </button>
+                                                                <button class="btn btn-white" type="submit">取消</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" id="tab-2">
+                                                <div class="row wrapper border-bottom white-bg page-heading">
+                                                    <div class="col-sm-12">
+                                                        <ol class="breadcrumb">
+                                                            <li>
+                                                                <button type="button"
+                                                                        class="btn btn-outline btn-default">留存率
+                                                                </button>
+                                                            </li>
+                                                            <li>
+                                                                <button type="button"
+                                                                        class="btn btn-outline btn-primary">订单成交量
+                                                                </button>
+                                                            </li>
+                                                            <li>
+                                                                <button type="button"
+                                                                        class="btn btn-outline btn-success">订单成交率
+                                                                </button>
+                                                            </li>
+                                                            <li>
+                                                                <button type="button" class="btn btn-outline btn-info">
+                                                                    信息
+                                                                </button>
+                                                            </li>
+                                                            <li>
+                                                                <button type="button"
+                                                                        class="btn btn-outline btn-warning">警告
+                                                                </button>
+                                                            </li>
+                                                            <li>
+                                                                <button type="button"
+                                                                        class="btn btn-outline btn-danger">危险
+                                                                </button>
+                                                            </li>
+                                                            <li>
+                                                                <button type="button" class="btn btn-outline btn-link">
+                                                                    链接
+                                                                </button>
+                                                            </li>
+                                                        </ol>
+                                                    </div>
+                                                </div>
+
+                                                <div class="wrapper wrapper-content">
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <div class="middle-box text-center animated fadeInRightBig">
+                                                                <h3 class="font-bold">这里是页面内容</h3>
+
+                                                                <div class="error-desc">
+                                                                    图表
+                                                                    <br/><a href="#"
+                                                                            class="btn btn-primary m-t">打开主页</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <script src="/static/js/jquery.min.js?v=2.1.4"></script>
+    <script src="/static/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="/static/js/content.min.js?v=1.0.0"></script>
+    <script src="/static/js/plugins/iCheck/icheck.min.js"></script>
+    <script src="/static/js/plugins/chosen/chosen.jquery.js"></script>
+    <script src="/static/js/plugins/suggest/bootstrap-suggest.min.js"></script>
+    <script src="/static/js/plugins/jsKnob/jquery.knob.js"></script>
+    <script src="/static/js/plugins/jasny/jasny-bootstrap.min.js"></script>
+    <script src="/static/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+    <script src="/static/js/plugins/prettyfile/bootstrap-prettyfile.js"></script>
+    <script src="/static/js/plugins/nouslider/jquery.nouislider.min.js"></script>
+    <script src="/static/js/plugins/switchery/switchery.js"></script>
+    <script src="/static/js/plugins/ionRangeSlider/ion.rangeSlider.min.js"></script>
+    <script src="/static/js/plugins/iCheck/icheck.min.js"></script>
+    <script src="/static/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="/static/js/plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
+    <script src="/static/js/plugins/clockpicker/clockpicker.js"></script>
+    <script src="/static/js/plugins/cropper/cropper.min.js"></script>
+    <script src="/static/js/demo/form-advanced-demo.min.js"></script>
+    <script>
+        $(document).ready(function(){$("#loading-example-btn").click(function(){btn=$(this);simpleLoad(btn,true);simpleLoad(btn,false)})});function simpleLoad(btn,state){if(state){btn.children().addClass("fa-spin");btn.contents().last().replaceWith(" Loading")}else{setTimeout(function(){btn.children().removeClass("fa-spin");btn.contents().last().replaceWith(" Refresh")},2000)}};
+    </script>
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+
+</body>
+
+
+<!-- Mirrored from www.zi-han.net/theme/hplus/project_detail.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:19:44 GMT -->
+</html>
