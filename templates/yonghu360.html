@@ -30,18 +30,19 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="m-b-md">
-                                    <form method="get" class="form-inline">
+                                    <form method="post" class="form-inline">
+                                     {% csrf_token %}
                                         <div class="row">
-                                            <label class="col-sm-2 control-label">用户ID：</label>
-                                            <input type="text" class="col-sm-4 form-control" placeholder="输入用户ID">
+                                            <label class="col-sm-2 control-label" >用户ID：</label>
+                                            <input type="text" class="col-sm-4 form-control" id="yonghuid" placeholder="输入用户ID">
                                             &nbsp; &nbsp;
-                                            <button class="col-sm-1 btn btn-primary" type="submit">查询</button>
+                                            <button class="col-sm-1 btn btn-primary" onclick="search_360()" type="button">查询</button>
                                         </div>
                                     </form>
                                 </div>
                                 <dl class="dl-horizontal">
                                     <dt>当前生命周期</dt>
-                                    <dd><span class="label label-primary">衰退期</span>
+                                    <dd><span class="label label-primary" id="zhouqi"></span>
                                     </dd>
                                 </dl>
                             </div>
@@ -51,35 +52,35 @@
                                  <dl class="dl-horizontal">
 
                                     <dt>用户姓名</dt>
-                                    <dd>李辉</dd>
+                                    <dd id="name"></dd>
                                     <dt>活跃城市</dt>
-                                    <dd>北京</dd>
+                                    <dd id="city"></dd>
                                     <dt>注册时间：</dt>
-                                    <dd><a href="project_detail.html#" class="text-navy">2016-05-06</a>
+                                    <dd id="regis_time">
                                     </dd>
                                     <dt>VIP等级：</dt>
-                                    <dd>2级</dd>
+                                    <dd id="vip"></dd>
                                     <dt>近一个月订单次数</dt>
-                                    <dd>1次</dd>
-                                    <dt>近一个月订单次数</dt>
-                                    <dd>2次</dd>
+                                    <dd id="month1_order"></dd>
+                                    <dt>近一个月订单金额</dt>
+                                    <dd id="month1_count"></dd>
                                 </dl>
                             </div>
                             <div class="col-sm-7" id="cluster_info">
                                 <dl class="dl-horizontal">
 
                                     <dt>最后冒泡时间</dt>
-                                    <dd>2018年2月7日 22:03</dd>
+                                    <dd id="last_mao"></dd>
                                     <dt>最后订单时间</dt>
-                                    <dd>2014年 2月1日 12:01</dd>
+                                    <dd id="last_order"></dd>
                                     <dt>近一个月冒泡次数</dt>
-                                    <dd>0</dd>
+                                    <dd id="month1_mao"></dd>
                                     <dt>近三个月冒泡次数</dt>
-                                    <dd>11</dd>
-                                    <dt>近一个月订单金额</dt>
-                                    <dd>224</dd>
+                                    <dd id="month3_mao"></dd>
+                                    <dt>近三个月订单次数</dt>
+                                    <dd id="month3_order"></dd>
                                     <dt>近三个月订单金额</dt>
-                                    <dd>377</dd>
+                                    <dd id="month3_count"></dd>
                                 </dl>
                             </div>
                         </div>
@@ -104,25 +105,13 @@
                                                 <div class="feed-activity-list">
 
                                                     <div class="feed-element">
-                                                        <div class="ibox-content" id="qiza" style="width:500px;height:300px"></div>
+                                                        <div class="ibox-content" id="content1" style="display:inline-block;width:600px;height:300px"></div>
                                                     </div>
                                                     <div class="feed-element">
-                                                        <div class="ibox-content" id="goumai" style="width:500px;height:300px"></div>
+                                                        <div class="ibox-content" id="content2" style="display:inline-block;width:600px;height:300px"></div>
                                                     </div>
                                                     <div class="feed-element">
-                                                        <a href="profile.html#" class="pull-left">
-                                                            <img alt="image" class="img-circle" src="/static/img/a4.jpg">
-                                                        </a>
-                                                        <div class="media-body ">
-                                                            <small class="pull-right text-navy">5小时前</small>
-                                                            <strong>在水一方Y</strong> 关注了 <strong>那二十年的单身</strong>.
-                                                            <br>
-                                                            <small class="text-muted">今天 10:39 来自 iPhone客户端</small>
-                                                            <div class="actions">
-                                                                <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> 赞 </a>
-                                                                <a class="btn btn-xs btn-white"><i class="fa fa-heart"></i> 收藏</a>
-                                                            </div>
-                                                        </div>
+                                                        <div class="ibox-content" id="content3" style="display:inline-block;width:600px;height:300px"></div>
                                                     </div>
                                                 </div>
 
@@ -131,26 +120,13 @@
                                                 <div class="timeline-item">
                                                     <div class="row">
                                                         <div class="col-xs-3 date">
-                                                            <i class="fa fa-briefcase"></i> 6:00
+                                                            <i><span class="glyphicon glyphicon-user"></span></i> 2018年3月20日 22:03
+
                                                             <br>
-                                                            <small class="text-navy">2 小时前</small>
+                                                            <small class="text-navy">3天前</small>
                                                         </div>
                                                         <div class="col-xs-7 content no-top-border">
-                                                            <p class="m-b-xs"><strong>服务器已彻底崩溃</strong>
-                                                            </p>
-
-                                                            <p>还未检查出错误</p>
-
-                                                            <p><span data-diameter="40" class="updating-chart"
-                                                                     style="display: none;">3,9,6,5,9,4,7,3,2,9,8,7,4,5,1,2,9,5,4,7,2,7,7,3,5,2,3,3,2,1,6,9,8,8,3,7,4</span>
-                                                                <svg class="peity" height="16" width="64">
-                                                                    <polygon fill="#1ab394"
-                                                                             points="0 15 0 10.5 1.7777777777777777 0.5 3.5555555555555554 5.5 5.333333333333333 7.166666666666666 7.111111111111111 0.5 8.88888888888889 8.833333333333332 10.666666666666666 3.833333333333332 12.444444444444443 10.5 14.222222222222221 12.166666666666666 16 0.5 17.77777777777778 2.166666666666666 19.555555555555554 3.833333333333332 21.333333333333332 8.833333333333332 23.11111111111111 7.166666666666666 24.888888888888886 13.833333333333334 26.666666666666664 12.166666666666666 28.444444444444443 0.5 30.22222222222222 7.166666666666666 32 8.833333333333332 33.77777777777778 3.833333333333332 35.55555555555556 12.166666666666666 37.33333333333333 3.833333333333332 39.11111111111111 3.833333333333332 40.888888888888886 10.5 42.666666666666664 7.166666666666666 44.44444444444444 12.166666666666666 46.22222222222222 10.5 48 10.5 49.77777777777777 12.166666666666666 51.55555555555555 13.833333333333334 53.33333333333333 5.5 55.11111111111111 0.5 56.888888888888886 2.166666666666666 58.666666666666664 2.166666666666666 60.44444444444444 10.5 62.22222222222222 3.833333333333332 64 8.833333333333332 64 15"></polygon>
-                                                                    <polyline fill="transparent"
-                                                                              points="0 10.5 1.7777777777777777 0.5 3.5555555555555554 5.5 5.333333333333333 7.166666666666666 7.111111111111111 0.5 8.88888888888889 8.833333333333332 10.666666666666666 3.833333333333332 12.444444444444443 10.5 14.222222222222221 12.166666666666666 16 0.5 17.77777777777778 2.166666666666666 19.555555555555554 3.833333333333332 21.333333333333332 8.833333333333332 23.11111111111111 7.166666666666666 24.888888888888886 13.833333333333334 26.666666666666664 12.166666666666666 28.444444444444443 0.5 30.22222222222222 7.166666666666666 32 8.833333333333332 33.77777777777778 3.833333333333332 35.55555555555556 12.166666666666666 37.33333333333333 3.833333333333332 39.11111111111111 3.833333333333332 40.888888888888886 10.5 42.666666666666664 7.166666666666666 44.44444444444444 12.166666666666666 46.22222222222222 10.5 48 10.5 49.77777777777777 12.166666666666666 51.55555555555555 13.833333333333334 53.33333333333333 5.5 55.11111111111111 0.5 56.888888888888886 2.166666666666666 58.666666666666664 2.166666666666666 60.44444444444444 10.5 62.22222222222222 3.833333333333332 64 8.833333333333332"
-                                                                              stroke="#169c81" stroke-width="1"
-                                                                              stroke-linecap="square"></polyline>
-                                                                </svg>
+                                                            <p class="m-b-xs"><strong>冒泡</strong>
                                                             </p>
                                                         </div>
                                                     </div>
@@ -158,66 +134,30 @@
                                                 <div class="timeline-item">
                                                     <div class="row">
                                                         <div class="col-xs-3 date">
-                                                            <i class="fa fa-file-text"></i> 7:00
+                                                            <i><span class="glyphicon glyphicon-check"></span></i> 2018年3月15日 12:01
                                                             <br>
-                                                            <small class="text-navy">3小时前</small>
+                                                            <small class="text-navy">8天前</small>
                                                         </div>
                                                         <div class="col-xs-7 content">
-                                                            <p class="m-b-xs"><strong>修复了0.5个bug</strong>
+                                                            <p class="m-b-xs"><strong>下单</strong>
                                                             </p>
-                                                            <p>重启服务</p>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="timeline-item">
                                                     <div class="row">
                                                         <div class="col-xs-3 date">
-                                                            <i class="fa fa-coffee"></i> 8:00
+                                                            <i><span class="glyphicon glyphicon-plus-sign"></span></i>  2018年3月11日 21:08
                                                             <br>
+                                                            <small class="text-navy">12天前</small>
                                                         </div>
                                                         <div class="col-xs-7 content">
-                                                            <p class="m-b-xs"><strong>喝水、上厕所、做测试</strong>
-                                                            </p>
                                                             <p>
-                                                                喝了4杯水，上了3次厕所，控制台输出出2324个错误，神啊，带我走吧
+                                                               Nike Airmax鞋加入购物车
                                                             </p>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="timeline-item">
-                                                    <div class="row">
-                                                        <div class="col-xs-3 date">
-                                                            <i class="fa fa-phone"></i> 11:00
-                                                            <br>
-                                                            <small class="text-navy">21小时前</small>
-                                                        </div>
-                                                        <div class="col-xs-7 content">
-                                                            <p class="m-b-xs"><strong>项目经理打电话来了</strong>
-                                                            </p>
-                                                            <p>
-                                                                TMD，项目经理居然还没有起床！！！
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="timeline-item">
-                                                    <div class="row">
-                                                        <div class="col-xs-3 date">
-                                                            <i class="fa fa-user-md"></i> 09:00
-                                                            <br>
-                                                            <small>21小时前</small>
-                                                        </div>
-                                                        <div class="col-xs-7 content">
-                                                            <p class="m-b-xs"><strong>开会</strong>
-                                                            </p>
-                                                            <p>
-                                                                开你妹的会，老子还有897894个bug没有修复
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
                                             </div>
                                         </div>
 
@@ -233,7 +173,7 @@
         <div class="col-sm-3">
             <div class="wrapper wrapper-content project-manager">
                 <h4>30秒认知客户</h4>
-                <div id="nengli" style="width:200px;height:300px"></div>
+                <img id="img1" alt="image" class="form-group" style="display:none" src="/static/img/ciyun.png" />
             </div>
         </div>
     </div>
@@ -243,233 +183,167 @@
     <script src="/static/js/demo/echarts-demo.min.js"></script>
     <script src="/static/js/content.min.js?v=1.0.0"></script>
     <script type="text/javascript">
-        var myChart = echarts.init(document.getElementById('goumai'));
+         var myChart1 = echarts.init(document.getElementById('content1'));
          //加载加载动画
-        //.showLoading()
-        myChart.resize();
-        myChart.setOption({
+        myChart1.showLoading();
+        myChart1.resize();
+        myChart1.setOption({
                 title: {
-                text: '用户购买商品概率'
+                text: '用户冒泡和下单波动'
             },
-            tooltip: {
-                trigger: 'item',
-                formatter: "{a} <br/>{b} : {c}%"
-            },
-            toolbox: {
-                feature: {
-                    dataView: {readOnly: false},
-                    restore: {},
-                    saveAsImage: {}
-                }
-            },
-            legend: {
-                data: ['浏览商品','查看评论或咨询', '加入购物车', '提交订单', '支付订单']
-            },
-            calculable: true,
-            series: [
-                {
-                    name: '漏斗图',
-                    type: 'funnel',
-                    left: '10%',
-                    top: 60,
-                    //x2: 80,
-                    bottom: 60,
-                    width: '80%',
-                    // height: {totalHeight} - y - y2,
-                    min: 0,
-                    max: 100,
-                    minSize: '0%',
-                    maxSize: '100%',
-                    sort: 'descending',
-                    gap: 2,
-                    label: {
-                        normal: {
-                            show: true,
-                            position: 'inside'
-                        },
-                        emphasis: {
-                            textStyle: {
-                                fontSize: 20
-                            }
-                        }
-                    },
-                    labelLine: {
-                        normal: {
-                            length: 10,
-                            lineStyle: {
-                                width: 1,
-                                type: 'solid'
-                            }
-                        }
-                    },
-                    itemStyle: {
-                        normal: {
-                            borderColor: '#fff',
-                            borderWidth: 1
-                        }
-                    },
-                    data: [
-                        {value: 100, name: '浏览商品'},
-                        {value: 92.7, name: '查看评论或咨询'},
-                        {value: 65.4, name: '加入购物车'},
-                        {value: 30.6, name: '提交订单'},
-                        {value: 28.7, name: '支付订单'}
-                    ]
-                }
-            ]
-        });
-
-        var myChart = echarts.init(document.getElementById('qiza'));
-         //加载加载动画
-        //.showLoading()
-        myChart.resize();
-        myChart.setOption({
-
-            tooltip: {
-                trigger: 'axis',
-                axisPointer: {
-                    type: 'cross',
-                    label: {
-                        backgroundColor: '#6a7985'
-                    }
-                }
-            },
-            legend: {
-                data: ['浙江省','北京市','山东省']
-            },
-            toolbox: {
-                feature: {
-                    saveAsImage: {},
-                    dataView: {readOnly: false},
-                    magicType: {type: ['line', 'bar']},
-                }
-            },
-            grid: {
-                left: '3%',
-                right: '4%',
-                bottom: '3%',
-                containLabel: true
-            },
-            xAxis: [
-                {
-                    type: 'category',
-                    boundaryGap: false,
-                    data: ['3-19','3-20','3-21', '3-22', '3-23', '3-24', '3-25']
-                }
-            ],
-            yAxis: [
-                {
-                    type: 'value'
-                }
-            ],
-            series: [
-                {
-                    name: '浙江省',
-                    type: 'line',
-                    stack: '总量',
-                    areaStyle: {normal: {}},
-                    data: [243,212,258,210,291,520,400]
-                },
-                {
-                    name: '山东省',
-                    type: 'line',
-                    stack: '总量',
-                    areaStyle: {normal: {}},
-                    data: [90,78,80,56,92,180,102]
-                },
-                {
-                    name: '北京市',
-                    type: 'line',
-                    stack: '总量',
-                    label: {
-                        normal: {
-                            show: true,
-                            position: 'top'
-                        }
-                    },
-                    areaStyle: {normal: {}},
-                    data: [326,280,350,304,380,780,533]
-                }
-            ]
-        });
-
-        var myChart = echarts.init(document.getElementById('nengli'));
-         //加载加载动画
-        //.showLoading()
-        myChart.resize();
-        myChart.setOption({
-            backgroundColor: '#2c343c',
-
-    title: {
-        text: 'Customized Pie',
-        left: 'center',
-        top: 20,
-        textStyle: {
-            color: '#ccc'
+            tooltip : {
+        trigger: 'axis'
+    },
+    legend: {
+        data:['冒泡次数','下单次数']
+    },
+    toolbox: {
+        show : true,
+        feature : {
+            mark : {show: true},
+            dataView : {show: true, readOnly: false},
+            magicType : {show: true, type: ['line', 'bar']},
+            restore : {show: true},
+            saveAsImage : {show: true}
         }
     },
-
-    tooltip : {
-        trigger: 'item',
-        formatter: "{a} <br/>{b} : {c} ({d}%)"
-    },
-
-    visualMap: {
-        show: false,
-        min: 80,
-        max: 600,
-        inRange: {
-            colorLightness: [0, 1]
-        }
-    },
-    series : [
+    calculable : true,
+    xAxis : [
         {
-            name:'访问来源',
-            type:'pie',
-            radius : '55%',
-            center: ['50%', '50%'],
-            data:[
-                {value:335, name:'直接访问'},
-                {value:310, name:'邮件营销'},
-                {value:274, name:'联盟广告'},
-                {value:235, name:'视频广告'},
-                {value:400, name:'搜索引擎'}
-            ].sort(function (a, b) { return a.value - b.value; }),
-            roseType: 'radius',
-            label: {
-                normal: {
-                    textStyle: {
-                        color: 'rgba(255, 255, 255, 0.3)'
-                    }
-                }
-            },
-            labelLine: {
-                normal: {
-                    lineStyle: {
-                        color: 'rgba(255, 255, 255, 0.3)'
-                    },
-                    smooth: 0.2,
-                    length: 10,
-                    length2: 20
-                }
-            },
-            itemStyle: {
-                normal: {
-                    color: '#c23531',
-                    shadowBlur: 200,
-                    shadowColor: 'rgba(0, 0, 0, 0.5)'
-                }
-            },
-
-            animationType: 'scale',
-            animationEasing: 'elasticOut',
-            animationDelay: function (idx) {
-                return Math.random() * 200;
+            type : 'category',
+            boundaryGap : false,
+            data : []
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value',
+            axisLabel : {
+                formatter: '{value} 次'
             }
         }
-    ]
+    ],
+    series : [
+        {
+            name:'冒泡次数',
+            type:'line',
+            data:[],
+            markPoint : {
+                data : [
+                    {type : 'max', name: '最大值'},
+                    {type : 'min', name: '最小值'}
+                ]
+            },
+            markLine : {
+                data : [
+                    {type : 'average', name: '平均值'}
+                ]
+            }
+        },
+        {
+            name:'下单次数',
+            type:'line',
+            data:[],
+            markPoint : {
+                data : [
+                    {type : 'max', name: '最大值'},
+                    {type : 'min', name: '最小值'}
+                ]
+            },
+            markLine : {
+                data : [
+                    {type : 'average', name : '平均值'}
+                ]
+            }
+        }
+        ]
         });
+
+    $("#img1").attr('style','display:block');
+
+
+    window.onresize = function(){
+        for(var i = 0; i < charts.length; i++){
+            charts[i].resize();
+        }
+    };
     </script>
+
+    <script>
+    function search_360()
+    {
+        var yonghuid = $("#yonghuid").val();
+        myChart1.hideLoading();
+
+         $.ajax({
+            async: false,
+            url:"/kanban/search_360/",
+            type:'POST',
+            data:{ key: yonghuid},
+            dataType : "text",
+            success: function (data) {   //如果程序执行成功就会执行这里的函数
+                {#console.log(data)#}
+                temp = JSON.parse(data);
+                {#console.log(temp.cos_huaxiang['cos_fenbu']['总费用']);#}
+                {#var callback_dic = $.parseJSON(data);#}
+                {#temp = JSON.parse(data);#}
+                {#console.log(temp.cos_info['name']);#}
+                $('#zhouqi').html(temp.cos_info['zhouqi']);
+                $('#name').html(temp.cos_info['name']);
+                $('#city').html(temp.cos_info['city']);
+                $('#regis_time').html(temp.cos_info['regis_date']);
+                $('#vip').html(temp.cos_info['vip']);
+                $('#month1_mao').html(temp.cos_info['month1_maopao_times']);
+                $('#month1_order').html(temp.cos_info['month1_order_times']);
+                $('#month1_count').html(temp.cos_info['month1_order_count']);
+                $('#month3_mao').html(temp.cos_info['month3_maopao_times']);
+                $('#month3_order').html(temp.cos_info['month3_order_times']);
+                $('#month3_count').html(temp.cos_info['month3_order_count']);
+                $('#last_mao').html(temp.cos_info['last_maopao_date']);
+                $('#last_order').html(temp.cos_info['last_order_date']);
+                var keyAry = [];
+                var maovalueAry = [];
+                var ordervalueAry = [];
+                var jsonObj = temp.cos_huaxiang['maopao_times'];
+                var order_times = temp.cos_huaxiang['order_times'];
+                for(var key in jsonObj){
+                    keyAry.push(key);
+                    maovalueAry.push(jsonObj[key]);
+                }
+                for(var key1 in order_times){
+                    ordervalueAry.push(order_times[key1]);
+                }
+                {#console.log(keyAry);#}
+                {#console.log(maovalueAry);#}
+                {#console.log(ordervalueAry);#}
+
+                myChart1.setOption({
+                    xAxis : [
+                {
+                     type : 'category',
+                    data : keyAry
+                }
+                ],
+                    series: [{
+                // 根据名字对应到相应的系列
+                name: '冒泡次数',
+                data: maovalueAry
+                },
+                     {
+                // 根据名字对应到相应的系列
+                name: '下单次数',
+                data: ordervalueAry
+                 }]
+
+                });
+
+
+
+            }
+        });
+    }
+    </script>
+
     <script>
         $(document).ready(function(){$("#loading-example-btn").click(function(){btn=$(this);simpleLoad(btn,true);simpleLoad(btn,false)})});function simpleLoad(btn,state){if(state){btn.children().addClass("fa-spin");btn.contents().last().replaceWith(" Loading")}else{setTimeout(function(){btn.children().removeClass("fa-spin");btn.contents().last().replaceWith(" Refresh")},2000)}};
     </script>

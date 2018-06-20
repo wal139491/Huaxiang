@@ -22,14 +22,31 @@
 </head>
 
 <body class="gray-bg">
-    <div class="row  border-bottom white-bg dashboard-header">
-        <div class="col-sm-12">
-            <p>客户端数据概览，包含APP、Web端活跃人数，成交量等数据<a href="http://echarts.baidu.com/doc/about.html" target="_blank">说明文档</a>
-            </p>
-            <button id="hide" type="button">点击显示</button>
-        </div>
+            <div class="ibox-content" style="height:80px">
+                <form method="get" class="form_inline">
+                    <div class="form-group">
+                        <label class="col-sm-1">起始日期</label>
+                        <div class="col-sm-3">
+                          <div class="  input-group date">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <input type="text" class="form-control" value="2018-3-19">
+                                </div>
+                        </div>
 
-    </div>
+                        <label class="col-sm-1">结束日期</label>
+                        <div class="col-sm-3">
+                            <div class="  input-group date">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <input type="text" class="form-control" value="2018-3-19">
+                                </div>
+                        </div>
+                        <div class="col-sm-2">
+                        <button class="btn btn-primary" type="submit">查询</button>
+                        </div>
+                    </div>
+                </form>
+                 </div>
+
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
             <div class="col-sm-6">
@@ -62,7 +79,7 @@
             <div class="col-sm-6">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>APP端活跃用户</h5>
+                        <h5>客户端活跃用户</h5>
                         <div class="ibox-tools">
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
@@ -116,226 +133,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6">
-                <div class="ibox float-e-margins">
-                    <div class="ibox-title">
-                        <h5>K线图</h5>
-                        <div class="ibox-tools">
-                            <a class="collapse-link">
-                                <i class="fa fa-chevron-up"></i>
-                            </a>
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="graph_flot.html#">
-                                <i class="fa fa-wrench"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-user">
-                                <li><a href="graph_flot.html#">选项1</a>
-                                </li>
-                                <li><a href="graph_flot.html#">选项2</a>
-                                </li>
-                            </ul>
-                            <a class="close-link">
-                                <i class="fa fa-times"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="ibox-content">
-                        <div class="echarts" id="echarts-k-chart"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="ibox float-e-margins">
-                    <div class="ibox-title">
-                        <h5>饼状图</h5>
-                        <div class="ibox-tools">
-                            <a class="collapse-link">
-                                <i class="fa fa-chevron-up"></i>
-                            </a>
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="graph_flot.html#">
-                                <i class="fa fa-wrench"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-user">
-                                <li><a href="graph_flot.html#">选项1</a>
-                                </li>
-                                <li><a href="graph_flot.html#">选项2</a>
-                                </li>
-                            </ul>
-                            <a class="close-link">
-                                <i class="fa fa-times"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="ibox-content">
-                        <div class="echarts" id="echarts-pie-chart"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="ibox float-e-margins">
-                    <div class="ibox-title">
-                        <h5>雷达图</h5>
-                        <div class="ibox-tools">
-                            <a class="collapse-link">
-                                <i class="fa fa-chevron-up"></i>
-                            </a>
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="graph_flot.html#">
-                                <i class="fa fa-wrench"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-user">
-                                <li><a href="graph_flot.html#">选项1</a>
-                                </li>
-                                <li><a href="graph_flot.html#">选项2</a>
-                                </li>
-                            </ul>
-                            <a class="close-link">
-                                <i class="fa fa-times"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="ibox-content">
-                        <div class="echarts" id="echarts-radar-chart"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="ibox float-e-margins">
-                    <div class="ibox-title">
-                        <h5>和弦图</h5>
-                        <div class="ibox-tools">
-                            <a class="collapse-link">
-                                <i class="fa fa-chevron-up"></i>
-                            </a>
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="graph_flot.html#">
-                                <i class="fa fa-wrench"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-user">
-                                <li><a href="graph_flot.html#">选项1</a>
-                                </li>
-                                <li><a href="graph_flot.html#">选项2</a>
-                                </li>
-                            </ul>
-                            <a class="close-link">
-                                <i class="fa fa-times"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="ibox-content">
-                        <div class="echarts" id="echarts-chord-chart"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="ibox float-e-margins">
-                    <div class="ibox-title">
-                        <h5>仪表盘</h5>
-                        <div class="ibox-tools">
-                            <a class="collapse-link">
-                                <i class="fa fa-chevron-up"></i>
-                            </a>
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="graph_flot.html#">
-                                <i class="fa fa-wrench"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-user">
-                                <li><a href="graph_flot.html#">选项1</a>
-                                </li>
-                                <li><a href="graph_flot.html#">选项2</a>
-                                </li>
-                            </ul>
-                            <a class="close-link">
-                                <i class="fa fa-times"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="ibox-content">
-                        <div class="echarts" id="echarts-gauge-chart"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="ibox float-e-margins">
-                    <div class="ibox-title">
-                        <h5>漏斗图</h5>
-                        <div class="ibox-tools">
-                            <a class="collapse-link">
-                                <i class="fa fa-chevron-up"></i>
-                            </a>
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="graph_flot.html#">
-                                <i class="fa fa-wrench"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-user">
-                                <li><a href="graph_flot.html#">选项1</a>
-                                </li>
-                                <li><a href="graph_flot.html#">选项2</a>
-                                </li>
-                            </ul>
-                            <a class="close-link">
-                                <i class="fa fa-times"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="ibox-content">
-                        <div class="echarts" id="echarts-funnel-chart"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="ibox float-e-margins">
-                    <div class="ibox-title">
-                        <h5>力导向布局图</h5>
-                        <div class="ibox-tools">
-                            <a class="collapse-link">
-                                <i class="fa fa-chevron-up"></i>
-                            </a>
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="graph_flot.html#">
-                                <i class="fa fa-wrench"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-user">
-                                <li><a href="graph_flot.html#">选项1</a>
-                                </li>
-                                <li><a href="graph_flot.html#">选项2</a>
-                                </li>
-                            </ul>
-                            <a class="close-link">
-                                <i class="fa fa-times"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="ibox-content">
-                        <div class="echarts" id="echarts-force-chart"></div>
-                    </div>
-                </div>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="ibox float-e-margins">
-                    <div class="ibox-title">
-                        <h5>中国地图</h5>
-                        <div class="ibox-tools">
-                            <a class="collapse-link">
-                                <i class="fa fa-chevron-up"></i>
-                            </a>
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="graph_flot.html#">
-                                <i class="fa fa-wrench"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-user">
-                                <li><a href="graph_flot.html#">选项1</a>
-                                </li>
-                                <li><a href="graph_flot.html#">选项2</a>
-                                </li>
-                            </ul>
-                            <a class="close-link">
-                                <i class="fa fa-times"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="ibox-content">
-                        <div style="height:600px" id="echarts-map-chart"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     <script src="/static/js/jquery.min.js?v=2.1.4"></script>
     <script src="/static/js/bootstrap.min.js?v=3.3.6"></script>
@@ -421,71 +221,144 @@
          //加载加载动画
         //.showLoading()
         myChart.setOption({
-
+            title: {
+                text: 'iphone销量',
+                subtext: '纯属虚构',
+                left: 'center'
+            },
             tooltip: {
-                trigger: 'axis',
-                axisPointer: {
-                    type: 'cross',
-                    label: {
-                        backgroundColor: '#6a7985'
-                    }
-                }
+                trigger: 'item'
             },
             legend: {
-                data: ['浙江省','北京市','山东省']
+                orient: 'vertical',
+                left: 'left',
+                data:['iphone3','iphone4','iphone5']
+            },
+            visualMap: {
+                min: 0,
+                max: 2500,
+                left: 'left',
+                top: 'bottom',
+                text: ['高','低'],           // 文本，默认为数值文本
+                calculable: true
             },
             toolbox: {
+                show: true,
+                orient: 'vertical',
+                left: 'right',
+                top: 'center',
                 feature: {
-                    saveAsImage: {},
                     dataView: {readOnly: false},
-                    magicType: {type: ['line', 'bar']},
+                    restore: {},
+                    saveAsImage: {}
                 }
             },
-            grid: {
-                left: '3%',
-                right: '4%',
-                bottom: '3%',
-                containLabel: true
-            },
-            xAxis: [
-                {
-                    type: 'category',
-                    boundaryGap: false,
-                    data: ['3-19','3-20','3-21', '3-22', '3-23', '3-24', '3-25']
-                }
-            ],
-            yAxis: [
-                {
-                    type: 'value'
-                }
-            ],
             series: [
                 {
-                    name: '浙江省',
-                    type: 'line',
-                    stack: '总量',
-                    areaStyle: {normal: {}},
-                    data: [243,212,258,210,291,520,400]
-                },
-                {
-                    name: '山东省',
-                    type: 'line',
-                    stack: '总量',
-                    areaStyle: {normal: {}},
-                    data: [90,78,80,56,92,180,102]
-                },
-                {
-                    name: '北京市',
-                    type: 'line',
-                    stack: '总量',
+                    name: 'iphone3',
+                    type: 'map',
+                    mapType: 'china',
+                    roam: false,
                     label: {
                         normal: {
-                            show: true,
-                            position: 'top'
+                            show: true
+                        },
+                        emphasis: {
+                            show: true
                         }
                     },
-                    areaStyle: {normal: {}},
-                    data: [326,280,350,304,380,780,533]
+                    data:[
+                        {name: '北京',value: randomData() },
+                        {name: '天津',value: randomData() },
+                        {name: '上海',value: randomData() },
+                        {name: '重庆',value: randomData() },
+                        {name: '河北',value: randomData() },
+                        {name: '河南',value: randomData() },
+                        {name: '云南',value: randomData() },
+                        {name: '辽宁',value: randomData() },
+                        {name: '黑龙江',value: randomData() },
+                        {name: '湖南',value: randomData() },
+                        {name: '安徽',value: randomData() },
+                        {name: '山东',value: randomData() },
+                        {name: '新疆',value: randomData() },
+                        {name: '江苏',value: randomData() },
+                        {name: '浙江',value: randomData() },
+                        {name: '江西',value: randomData() },
+                        {name: '湖北',value: randomData() },
+                        {name: '广西',value: randomData() },
+                        {name: '甘肃',value: randomData() },
+                        {name: '山西',value: randomData() },
+                        {name: '内蒙古',value: randomData() },
+                        {name: '陕西',value: randomData() },
+                        {name: '吉林',value: randomData() },
+                        {name: '福建',value: randomData() },
+                        {name: '贵州',value: randomData() },
+                        {name: '广东',value: randomData() },
+                        {name: '青海',value: randomData() },
+                        {name: '西藏',value: randomData() },
+                        {name: '四川',value: randomData() },
+                        {name: '宁夏',value: randomData() },
+                        {name: '海南',value: randomData() },
+                        {name: '台湾',value: randomData() },
+                        {name: '香港',value: randomData() },
+                        {name: '澳门',value: randomData() }
+                    ]
+                },
+                {
+                    name: 'iphone4',
+                    type: 'map',
+                    mapType: 'china',
+                    label: {
+                        normal: {
+                            show: true
+                        },
+                        emphasis: {
+                            show: true
+                        }
+                    },
+                    data:[
+                        {name: '北京',value: randomData() },
+                        {name: '天津',value: randomData() },
+                        {name: '上海',value: randomData() },
+                        {name: '重庆',value: randomData() },
+                        {name: '河北',value: randomData() },
+                        {name: '安徽',value: randomData() },
+                        {name: '新疆',value: randomData() },
+                        {name: '浙江',value: randomData() },
+                        {name: '江西',value: randomData() },
+                        {name: '山西',value: randomData() },
+                        {name: '内蒙古',value: randomData() },
+                        {name: '吉林',value: randomData() },
+                        {name: '福建',value: randomData() },
+                        {name: '广东',value: randomData() },
+                        {name: '西藏',value: randomData() },
+                        {name: '四川',value: randomData() },
+                        {name: '宁夏',value: randomData() },
+                        {name: '香港',value: randomData() },
+                        {name: '澳门',value: randomData() }
+                    ]
+                },
+                {
+                    name: 'iphone5',
+                    type: 'map',
+                    mapType: 'china',
+                    label: {
+                        normal: {
+                            show: true
+                        },
+                        emphasis: {
+                            show: true
+                        }
+                    },
+                    data:[
+                        {name: '北京',value: randomData() },
+                        {name: '天津',value: randomData() },
+                        {name: '上海',value: randomData() },
+                        {name: '广东',value: randomData() },
+                        {name: '台湾',value: randomData() },
+                        {name: '香港',value: randomData() },
+                        {name: '澳门',value: randomData() }
+                    ]
                 }
             ]
         });

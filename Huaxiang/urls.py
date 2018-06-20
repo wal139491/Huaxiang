@@ -22,13 +22,20 @@ from django.contrib import admin
 urlpatterns = [
     path('admin/', admin.site.urls), #管理员
     url(r'^index', views.index),
-    url(r'^login',views.singin),
+    url(r'^login',views.signin),
+    url(r'^register',views.signup),
     url(r'^apply_auth',views.apply),
     url(r'^approve_auth',views.approve),
+    url(r'^core_data', views.core_data),
     url(r'^baobiao', views.baobiao),
+    url(r'^404error', views.error404),
+    url(r'^500error', views.error500),
     # url(r'^$', views.signin)
     url(r'^register',views.register),
-    url(r'^yonghu360',views.yonghu360),
+    url(r'^get_auth',views.get_auth),
+    url(r'^calendar',views.calendar),
+    url(r'^mailbox',views.mailbox),
+    url(r'^mail_compose',views.mail_compose),
     # 看板模块
     url('^jiguang/',include('jiguang.urls')),
     url('^kanban/',include('kanban.urls')), # 包含看板APP的urls

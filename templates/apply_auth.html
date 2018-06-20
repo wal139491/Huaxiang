@@ -10,15 +10,25 @@
 
 
     <title>权限申请表单</title>
-    <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
-    <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
 
     <link rel="shortcut icon" href="favicon.ico"> <link href="/static/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
     <link href="/static/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
     <link href="/static/css/plugins/iCheck/custom.css" rel="stylesheet">
     <link href="/static/css/animate.min.css" rel="stylesheet">
     <link href="/static/css/style.min862f.css?v=4.1.0" rel="stylesheet">
-
+    <link href="/static/css/animate.min.css" rel="stylesheet">
+    <link href="/static/css/plugins/dropzone/basic.css" rel="stylesheet">
+    <link href="/static/css/plugins/dropzone/dropzone.css" rel="stylesheet">
+    <link href="/static/css/plugins/chosen/chosen.css" rel="stylesheet">
+    <link href="/static/css/plugins/cropper/cropper.min.css" rel="stylesheet">
+    <link href="/static/css/plugins/switchery/switchery.css" rel="stylesheet">
+    <link href="/static/css/plugins/jasny/jasny-bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/plugins/nouslider/jquery.nouislider.css" rel="stylesheet">
+    <link href="/static/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+    <link href="/static/css/plugins/ionRangeSlider/ion.rangeSlider.css" rel="stylesheet">
+    <link href="/static/css/plugins/ionRangeSlider/ion.rangeSlider.skinFlat.css" rel="stylesheet">
+    <link href="/static/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+    <link href="/static/css/style.min862f.css?v=4.1.0" rel="stylesheet">
 </head>
 
 <body class="gray-bg">
@@ -47,19 +57,36 @@
                         </div>
                     </div>
                     <div class="ibox-content">
-                        <form method="get" class="form-horizontal">
+                        <form method="post" class="form-horizontal">
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">申请主题</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control"> <span class="help-block m-b-none">姓名+功能模块名称权限申请，example:赖伟+核心看板权限申请</span>
+                                    <input id="zhuti" type="text" class="form-control"> <span class="help-block m-b-none">姓名+功能模块名称权限申请，example:赖伟+核心看板权限申请</span>
                                 </div>
                             </div>
-
+                            <div class="form-group has-error">
+                                <label class="col-sm-2  control-label">选择要申请的功能</label>
+                                <div class="col-sm-10">
+                                    <select id="gongneng" data-placeholder="选择标签" class="chosen-select" multiple style="width:350px;"
+                                            tabindex="4">
+                                        <option value="">请选择功能模块</option>
+                                        <option value="110000" hassubinfo="true">标签仓库</option>
+                                        <option value="120000" hassubinfo="true">人群创建</option>
+                                        <option value="130000" hassubinfo="true">人群洞察</option>
+                                        <option value="140000" hassubinfo="true">客户端数据</option>
+                                        <option value="150000" hassubinfo="true">运营数据</option>
+                                        <option value="210000" hassubinfo="true">核心数据</option>
+                                        <option value="220000" hassubinfo="true">极光推送</option>
+                                        <option value="230000" hassubinfo="true">AB测试</option>
+                                        <option value="310000" hassubinfo="true">数据报表</option>
+                                    </select>
+                                </div>
+                            </div>
                             <div class="hr-line-dashed"></div>
                             <div class="form-group has-success">
                                 <label class="col-sm-2 control-label">申请原因</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" style="height:150px"> <span class="help-block m-b-none">请认真填写申请原因及用途否则被驳回</span>
+                                    <textarea id="reason" type="text" class="form-control" style="height:150px"></textarea> <span class="help-block m-b-none">请认真填写申请原因及用途否则被驳回</span>
                                 </div>
                             </div>
 
@@ -68,7 +95,7 @@
                                 <label class="col-sm-2 control-label">选择你的部门</label>
 
                                 <div class="col-sm-10">
-                                    <select class="form-control m-b" name="account">
+                                    <select id="dept" class="form-control m-b" name="account">
                                         <option>大数据部</option>
                                         <option>策略模型部</option>
                                         <option>运营部门</option>
@@ -83,11 +110,11 @@
                                 <label class="col-sm-2 control-label">选择管理员</label>
 
                                 <div class="col-sm-10">
-                                    <select class="form-control m-b" name="account">
-                                        <option>周星</option>
+                                    <select id="guanli" class="form-control m-b" name="account">
+                                        <option>赖伟</option>
                                         <option>陈都</option>
                                         <option>刘传奇</option>
-                                        <option>赖伟</option>
+                                        <option>蒋亚丽</option>
                                     </select>
                                 </div>
                             </div>
@@ -95,8 +122,8 @@
                             <div class="hr-line-dashed"></div>
                             <div class="form-group">
                                 <div class="col-sm-4 col-sm-offset-2">
-                                    <button class="btn btn-primary" type="submit">提交申请单</button>
-                                    <button class="btn btn-white" type="submit">取消</button>
+                                    <button class="btn btn-primary" onclick="ap_auth();" type="button">提交申请单</button>
+                                    <button class="btn btn-white" onclick="ap_cancle()" type="button">取消</button>
                                 </div>
                             </div>
                         </form>
@@ -146,13 +173,58 @@
         </div>
     </div>
     <script src="/static/js/jquery.min.js?v=2.1.4"></script>
+    <script src="/static/js/layer-v3.1.1/layer/layer.js"></script>
     <script src="/static/js/bootstrap.min.js?v=3.3.6"></script>
     <script src="/static/js/content.min.js?v=1.0.0"></script>
     <script src="/static/js/plugins/iCheck/icheck.min.js"></script>
+    <script src="/static/js/plugins/chosen/chosen.jquery.js"></script>
+    <script src="/static/js/plugins/suggest/bootstrap-suggest.min.js"></script>
+    <script src="/static/js/plugins/jsKnob/jquery.knob.js"></script>
+    <script src="/static/js/plugins/jasny/jasny-bootstrap.min.js"></script>
+    <script src="/static/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+    <script src="/static/js/plugins/prettyfile/bootstrap-prettyfile.js"></script>
+    <script src="/static/js/plugins/nouslider/jquery.nouislider.min.js"></script>
+    <script src="/static/js/plugins/switchery/switchery.js"></script>
+    <script src="/static/js/plugins/ionRangeSlider/ion.rangeSlider.min.js"></script>
+    <script src="/static/js/plugins/iCheck/icheck.min.js"></script>
+    <script src="/static/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="/static/js/plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
+    <script src="/static/js/plugins/clockpicker/clockpicker.js"></script>
+    <script src="/static/js/plugins/cropper/cropper.min.js"></script>
+    <script src="/static/js/demo/form-advanced-demo.min.js"></script>
     <script>
         $(document).ready(function(){$(".i-checks").iCheck({checkboxClass:"icheckbox_square-green",radioClass:"iradio_square-green",})});
     </script>
-    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+    <script type="text/javascript">
+     function ap_auth()
+    {
+         layer.msg('创建成功');
+        var zhuti = $("#zhuti").val();
+        var gongneng=$("#gongneng option:selected").text();
+        var reason = $("#reason").val();
+        var guanli=$("#guanli option:selected").text();
+        var dept=$("#dept option:selected").text()
+        console.log(guanli);
+        console.log(dept);
+        console.log(zhuti);
+        console.log(reason);
+        {#console.log(msg);#}
+
+         $.ajax({
+            async: false,
+            url:"get_auth/",
+            type:'POST',
+            data:{'zhuti':zhuti,'gongneng':gongneng,'reason':reason,'guanli':guanli,'dept':'dept'},
+            dataType : "text",
+            success: function (data) {   //如果程序执行成功就会执行这里的函数
+                console.log('no');
+            }
+            });
+            }
+    </script>
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8">
+
+    </script>
 </body>
 
 

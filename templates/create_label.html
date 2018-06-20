@@ -68,14 +68,14 @@
                             </div>
                             <div class="hr-line-dashed"></div>
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">一级标签名称</label>
+                                <label  class="col-sm-2 control-label">一级标签名称</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control"> <span class="help-block m-b-none">请选择一级标签名称，不存在则创建，比如：用户生命周期</span>
+                                    <input id="level1" type="text" class="form-control"> <span class="help-block m-b-none">请输入一级标签，不存在则创建，比如：用户生命周期</span>
                                 </div>
 
-                                <label class="col-sm-2 control-label">二级标签名称</label>
+                                <label  class="col-sm-2 control-label">二级标签名称</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control"> <span class="help-block m-b-none">创建一级标签下的标签,比如用户生命周期/新生期用户</span>
+                                    <input id="level2" type="text" class="form-control"> <span class="help-block m-b-none">创建一级标签下的名称,比如属于用户生命周期:新生期用户</span>
                                 </div>
                             </div>
 
@@ -83,14 +83,14 @@
                             <div class="form-group has-warning">
                                         <label class="col-sm-2 control-label">上传标签用户ID：</label>
                                         <div class="col-sm-10">
-                                            <input type="file" name="" class="form-control" style="height: 50px">
+                                            <input id="yonghuid" type="file" name="" class="form-control" style="height: 50px">
                                         </div>
                             </div>
 
                             <div class="hr-line-dashed"></div>
                             <div class="form-group">
                                 <div class="col-sm-4 col-sm-offset-2">
-                                    <button class="btn btn-primary" type="submit">创建标签</button>
+                                    <button class="btn btn-primary" onclick="create_a()" type="button">创建标签</button>
                                     <button class="btn btn-white" type="submit">取消</button>
                                 </div>
                             </div>
@@ -141,6 +141,7 @@
         </div>
     </div>
     <script src="/static/js/jquery.min.js?v=2.1.4"></script>
+    <script src="/static/js/layer-v3.1.1/layer/layer.js"></script>
     <script src="/static/js/bootstrap.min.js?v=3.3.6"></script>
     <script src="/static/js/content.min.js?v=1.0.0"></script>
     <script src="/static/js/plugins/iCheck/icheck.min.js"></script>
@@ -167,6 +168,18 @@
         $("form").submit(function (e) {
             return false
         });
+    </script>
+
+    <script type="text/javascript">
+     function create_a()
+    {
+        console.log('aa');
+
+            $('#level1').val("");
+            $('#level2').val("");
+            $('#yonghuid').val("");
+             layer.msg('标签创建成功');
+            }
     </script>
     <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
 </body>

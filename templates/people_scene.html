@@ -72,7 +72,7 @@
                             </select>
                         </div>
                         <div class="col-sm-2">
-                        <button class="btn btn-primary" type="submit">查询</button>
+                        <button class="btn btn-primary" onclick="create_a()" type="button">查询</button>
                         </div>
                     </div>
                 </form>
@@ -102,15 +102,26 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="example">
-                            <table id="exampleTableFromData" data-mobile-responsive="true">
+                            <table data-toggle="table">
                                 <thead>
                                 <tr>
-                                    <th data-field="Tid">ID</th>
-                                    <th data-field="First">姓名</th>
-                                    <th data-field="sex">性别</th>
-                                    <th data-field="Score">评分</th>
+                                    <th>人群ID</th>
+                                    <th>创建时间</th>
+                                    <th>人群名称</th>
+                                    <th>人群描述</th>
+                                    <th>洞察</th>
                                 </tr>
                                 </thead>
+                                          <tbody>
+                                <tr>
+                                    <td id="td1"></td>
+                                    <td id="td2"></td>
+                                    <td id="td3"></td>
+                                    <td id="td4"></td>
+                                    <td> <button class="btn btn-outline btn-primary" type="button">洞察分析</button></td>
+                                </tr>
+
+                                </tbody>
                             </table>
                         </div>
                     </div>
@@ -128,7 +139,15 @@
     <script src="/static/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
     <script src="/static/js/demo/bootstrap-table-demo.min.js"></script>
     <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+<script type="text/javascript">
+     function create_a()
+    {
 
+        $('#td1').html('66');
+        $('#td2').html('2018-5-20');
+        $('#td3').html('浙江衰退用户+浙江vip5流失用户(推送邮件)');
+        $('#td4').html('浙江衰退用户+浙江vip5流失用户(推送邮件)');}
+        </script>
 </body>
 
 

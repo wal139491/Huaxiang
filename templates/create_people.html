@@ -75,12 +75,11 @@
                            <div class="form-group  has-success">
                                 <label class="col-sm-2 control-label">人群详细描述</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" style="height:150px"> <span class="help-block m-b-none">例如：北京VIP2且近一个月冒泡下单次数高用户群体</span>
+                                    <textarea type="text" class="form-control" style="height:150px"></textarea> <span class="help-block m-b-none">例如：北京VIP2且近一个月冒泡下单次数高用户群体</span>
                                 </div>
                             </div>
                             <div class="hr-line-dashed"></div>
                           <div class="row">
-                                <label class="col-sm-2 control-label"  style="display:inline">选择标签用途</label>
 
                                 <div class="col-sm-4"  >
                                     <select class="form-control m-b" name="account" >
@@ -123,13 +122,18 @@
                                         <option value="330000" hassubinfo="true">运动爱好</option>
                                         <option value="340000" hassubinfo="true">美妆人群</option>
                                         <option value="350000" hassubinfo="true">吃货一族</option>
-                                        <option value="360000" hassubinfo="true">近7日冒泡</option>
-                                        <option value="370000" hassubinfo="true">近30日冒泡</option>
+                                        <option value="360000" hassubinfo="true">近7日冒泡低</option>
+                                        <option value="360000" hassubinfo="true">近7日冒泡中</option>
+                                        <option value="360000" hassubinfo="true">近7日冒泡中</option>
+                                        <option value="370000" hassubinfo="true">近30日冒泡低</option>
+                                        <option value="370000" hassubinfo="true">近30日冒泡中</option>
+                                        <option value="370000" hassubinfo="true">近30日冒泡高</option>
                                         <option value="410000" hassubinfo="true">近3个月冒泡</option>
                                         <option value="420000" hassubinfo="true">近7日订单</option>
-                                        <option value="430000" hassubinfo="true">近30日订单</option>
+                                        <option value="430000" hassubinfo="true">近30日订单低</option>
+                                        <option value="430000" hassubinfo="true">近30日订单中</option>
+                                        <option value="430000" hassubinfo="true">近30日订单高</option>
                                         <option value="440000" hassubinfo="true">近3个月订单</option>
-                                        <option value="450000" hassubinfo="true">广西壮族自治区</option>
                                         <option value="460000" hassubinfo="true">VIP1级</option>
                                         <option value="500000" hassubinfo="true">VIP2-4级</option>
                                         <option value="510000" hassubinfo="true">VIP5-6级</option>
@@ -187,7 +191,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-4 col-sm-offset-2">
-                                    <button class="btn btn-primary" type="submit">创建人群</button>
+                                    <button class="btn btn-primary" onclick="create_a()" type="button">创建人群</button>
                                     <button class="btn btn-white" type="submit">取消</button>
                                 </div>
                             </div>
@@ -238,6 +242,7 @@
         </div>
     </div>
     <script src="/static/js/jquery.min.js?v=2.1.4"></script>
+    <script src="/static/js/layer-v3.1.1/layer/layer.js"></script>
     <script src="/static/js/bootstrap.min.js?v=3.3.6"></script>
     <script src="/static/js/content.min.js?v=1.0.0"></script>
     <script src="/static/js/plugins/iCheck/icheck.min.js"></script>
@@ -278,6 +283,13 @@
         $("form").submit(function (e) {
             return false
         });
+    </script>
+     <script type="text/javascript">
+     function create_a()
+    {
+        console.log('aa');
+             layer.msg('人群创建成功');
+            }
     </script>
     <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
 </body>

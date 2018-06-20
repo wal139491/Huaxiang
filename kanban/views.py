@@ -5,6 +5,8 @@ from django.shortcuts import HttpResponse
 from django.http import JsonResponse
 from django import forms
 from django.forms.models import model_to_dict
+from Huaxiang.mongo_adapter import *
+from django.views.decorators.csrf import csrf_exempt
 
 from .models import *
 from django.core import serializers
@@ -15,6 +17,7 @@ import logging
 
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
+@csrf_exempt
 
 def kanban1(request):
 
@@ -83,4 +86,22 @@ def app_count(request):
 def quset():
     qu_rsult = App_statistic.objects.all().values_list('city', flat=True).distinct()
     return qu_rsult
+
+def yonghu360(request):
+    return render(request, 'yonghu360.html')
+
+
+def search_360(request):
+    print('yes')
+    print(type(request.POST))
+    print(request.POST)
+    cos_id = int(request.POST['key'])
+    md = MongoAdapter('huaxiang')
+    result = md.query('user_base', {'cos_id':cos_id},{'_id':0})
+    for document in result:
+        print(type(document))
+        print(document)
+        j_ret = json.dumps(document)
+        return HttpResponse(j_ret)
+        #return render(request,'yonghu360.html', document)
 
